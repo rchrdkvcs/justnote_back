@@ -8,6 +8,7 @@
 */
 
 import router from '@adonisjs/core/services/router'
+const OauthController = () => import('#auth/controllers/oauth_controller')
 const UpdateNotesController = () => import('#notes/controllers/update_notes_controller')
 
 const ShowNotesController = () => import('#notes/controllers/show_notes_controller')
@@ -21,6 +22,9 @@ router
   .group(() => {
     router.post('/register', [RegistersController, 'execute'])
     router.post('/login', [LoginController, 'execute'])
+
+    router.get('/:provider', [OauthController, 'render'])
+    router.get('/:provider/callback', [OauthController, 'execute'])
   })
   .prefix('/auth')
 

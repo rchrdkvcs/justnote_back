@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@adonisjs/ally':
+        specifier: ^5.1.0
+        version: 5.1.0(@adonisjs/core@6.17.2(@adonisjs/assembler@7.8.2(typescript@5.7.3))(@vinejs/vine@3.0.1))
       '@adonisjs/auth':
         specifier: ^9.3.1
         version: 9.4.0(@adonisjs/assembler@7.8.2(typescript@5.7.3))(@adonisjs/core@6.17.2(@adonisjs/assembler@7.8.2(typescript@5.7.3))(@vinejs/vine@3.0.1))(@adonisjs/lucid@21.6.1(@adonisjs/assembler@7.8.2(typescript@5.7.3))(@adonisjs/core@6.17.2(@adonisjs/assembler@7.8.2(typescript@5.7.3))(@vinejs/vine@3.0.1))(@vinejs/vine@3.0.1)(luxon@3.6.1)(pg@8.16.0))(@adonisjs/session@7.5.1(@adonisjs/core@6.17.2(@adonisjs/assembler@7.8.2(typescript@5.7.3))(@vinejs/vine@3.0.1))(@japa/api-client@3.1.0(@japa/assert@4.0.1(@japa/runner@4.2.0))(@japa/runner@4.2.0)))(@japa/api-client@3.1.0(@japa/assert@4.0.1(@japa/runner@4.2.0))(@japa/runner@4.2.0))(@japa/plugin-adonisjs@4.0.0(@adonisjs/core@6.17.2(@adonisjs/assembler@7.8.2(typescript@5.7.3))(@vinejs/vine@3.0.1))(@japa/api-client@3.1.0(@japa/assert@4.0.1(@japa/runner@4.2.0))(@japa/runner@4.2.0))(@japa/runner@4.2.0))
@@ -93,6 +96,12 @@ packages:
   '@adonisjs/ace@13.3.0':
     resolution: {integrity: sha512-68dveDFd766p69cBvK/MtOrOP0+YKYLeHspa9KLEWcWk9suPf3pbGkHQ2pwDnvLJxBPHk4932KbbSSzzpGNZGw==}
     engines: {node: '>=18.16.0'}
+
+  '@adonisjs/ally@5.1.0':
+    resolution: {integrity: sha512-Zr+ScZJAH6i5N80cZUjLWX9yLsNQu8qK/syfcEK4XKBaX8watlUseN2xPMTr5dds/3CsqIBYI83Rpvv7dlvddQ==}
+    engines: {node: '>=20.6.0'}
+    peerDependencies:
+      '@adonisjs/core': ^6.2.0
 
   '@adonisjs/application@8.3.2':
     resolution: {integrity: sha512-m4AcDdOiDg6/dljcBY6BQAOMQG8kCdv/lgxfAb5HqmfHIaQhUSYzxG08w5jojRm6cDBGsShu3VvTzfhJ2145Sw==}
@@ -526,6 +535,10 @@ packages:
 
   '@poppinss/multiparty@2.0.1':
     resolution: {integrity: sha512-Pf3V9PFyZDIkDBBiAOT2hdmA+1l/+hverHbUnMzNzwtwgO50s2ZPt5KxUydVA0hceg9gryo5unQ0WUF1SO9tkQ==}
+
+  '@poppinss/oauth-client@7.0.0':
+    resolution: {integrity: sha512-oBWcbLDJxh+WSlSfM093u3Usw6qCa8HKAd1kFqNKY2LdK+4l5iqv6w2iTaSsiQFbACNgIS3VNIB1yQcmI1FI6w==}
+    engines: {node: '>=18.16.0'}
 
   '@poppinss/object-builder@1.1.0':
     resolution: {integrity: sha512-FOrOq52l7u8goR5yncX14+k+Ewi5djnrt1JwXeS/FvnwAPOiveFhiczCDuvXdssAwamtrV2hp5Rw9v+n2T7hQg==}
@@ -1706,6 +1719,10 @@ packages:
       tedious:
         optional: true
 
+  ky@1.8.1:
+    resolution: {integrity: sha512-7Bp3TpsE+L+TARSnnDpk3xg8Idi8RwSLdj6CMbNWoOARIrGrbuLGusV0dYwbZOm4bB3jHNxSw8Wk/ByDqJEnDw==}
+    engines: {node: '>=18'}
+
   levn@0.4.1:
     resolution: {integrity: sha512-+bT2uH4E5LGE7h/n3evcS/sQlJXCpIp6ym8OWJ5eV6+67Dsql/LaaT7qJBAt2rzfoa/5QBGBhxDix1dMt2kQKQ==}
     engines: {node: '>= 0.8.0'}
@@ -2664,6 +2681,12 @@ snapshots:
       youch: 3.3.4
       youch-terminal: 2.2.3
 
+  '@adonisjs/ally@5.1.0(@adonisjs/core@6.17.2(@adonisjs/assembler@7.8.2(typescript@5.7.3))(@vinejs/vine@3.0.1))':
+    dependencies:
+      '@adonisjs/core': 6.17.2(@adonisjs/assembler@7.8.2(typescript@5.7.3))(@vinejs/vine@3.0.1)
+      '@poppinss/oauth-client': 7.0.0
+      '@poppinss/utils': 6.9.3
+
   '@adonisjs/application@8.3.2(@adonisjs/config@5.0.2)(@adonisjs/fold@10.1.3)':
     dependencies:
       '@adonisjs/config': 5.0.2
@@ -3183,6 +3206,11 @@ snapshots:
       http-errors: 2.0.0
       safe-buffer: 5.2.1
       uid-safe: 2.1.5
+
+  '@poppinss/oauth-client@7.0.0':
+    dependencies:
+      '@poppinss/exception': 1.2.1
+      ky: 1.8.1
 
   '@poppinss/object-builder@1.1.0': {}
 
@@ -4335,6 +4363,8 @@ snapshots:
       pg: 8.16.0
     transitivePeerDependencies:
       - supports-color
+
+  ky@1.8.1: {}
 
   levn@0.4.1:
     dependencies:
