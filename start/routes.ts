@@ -8,8 +8,10 @@
 */
 
 import router from '@adonisjs/core/services/router'
-const MoveNotesController = () => import('#notes/controllers/move_notes_controller')
+const UpdateNotesController = () => import('#notes/controllers/update_notes_controller')
 
+const ShowNotesController = () => import('#notes/controllers/show_notes_controller')
+const MoveNotesController = () => import('#notes/controllers/move_notes_controller')
 const CreateNotesController = () => import('#notes/controllers/create_notes_controller')
 const GetNotesController = () => import('#notes/controllers/get_notes_controller')
 const RegistersController = () => import('#auth/controllers/register_controller')
@@ -27,5 +29,7 @@ router
     router.post('/', [CreateNotesController, 'execute'])
     router.post('/move', [MoveNotesController, 'execute'])
     router.get('/', [GetNotesController, 'execute'])
+    router.get('/:noteId', [ShowNotesController, 'execute'])
+    router.put('/:noteId', [UpdateNotesController, 'execute'])
   })
   .prefix('/notes')
