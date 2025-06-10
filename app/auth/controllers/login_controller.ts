@@ -19,10 +19,7 @@ export default class LoginController {
     return response.json({
       message: 'User logged in successfully',
       token,
-      user: {
-        id: user.id,
-        email: user.email,
-      },
+      user,
     })
   }
 }

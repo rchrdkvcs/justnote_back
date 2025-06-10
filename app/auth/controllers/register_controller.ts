@@ -5,6 +5,7 @@ import vine from '@vinejs/vine'
 export default class RegistersController {
   static validator = vine.compile(
     vine.object({
+      userName: vine.string().minLength(3).maxLength(50),
       email: vine.string().email(),
       password: vine.string().minLength(8),
       passwordConfirmation: vine.string().confirmed({ confirmationField: 'password' }),
@@ -25,10 +26,7 @@ export default class RegistersController {
     return response.json({
       message: 'User created successfully',
       token,
-      user: {
-        id: user.id,
-        email: user.email,
-      },
+      user,
     })
   }
 }

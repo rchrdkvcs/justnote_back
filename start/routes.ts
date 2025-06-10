@@ -8,6 +8,7 @@
 */
 
 import router from '@adonisjs/core/services/router'
+const DeleteNoteController = () => import('#notes/controllers/delete_note_controller')
 const OauthController = () => import('#auth/controllers/oauth_controller')
 const UpdateNotesController = () => import('#notes/controllers/update_notes_controller')
 
@@ -35,5 +36,6 @@ router
     router.get('/', [GetNotesController, 'execute'])
     router.get('/:noteId', [ShowNotesController, 'execute'])
     router.put('/:noteId', [UpdateNotesController, 'execute'])
+    router.delete('/:noteId', [DeleteNoteController, 'execute'])
   })
   .prefix('/notes')
