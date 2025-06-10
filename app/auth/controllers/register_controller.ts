@@ -16,7 +16,10 @@ export default class RegistersController {
 
     const { passwordConfirmation, ...userData } = data
 
-    const user = await User.create(userData)
+    const user = await User.create({
+      ...userData,
+      authProvider: 'local',
+    })
     const token = await User.accessTokens.create(user)
 
     return response.json({
